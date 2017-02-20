@@ -51,34 +51,32 @@ var App = null;
 	    		}
 	    	});
 	    	
-	   		$("#btn_sort_by_title").bind("click", function(e) {
+	   		this.ui.setOnBtnSortByTitleClick(function(e) {
 	   			self.tracks = self.trackUtils.sortByTitle(self.tracks);
 	   			self.ui.showTracks(self.tracks);
 	   		});
-	   		$("#btn_sort_by_artist").bind("click", function(e) {
+	   		this.ui.setOnBtnSortByArtistClick(function(e) {
 	   			self.tracks = self.trackUtils.sortByArtist(self.tracks);
 	   			self.ui.showTracks(self.tracks);
 	   		});
-	   		$("#btn_sort_by_album").bind("click", function(e) {
+	   		this.ui.setOnBtnSortByAlbumClick(function(e) {
 	   			self.tracks = self.trackUtils.sortByAlbum(self.tracks);
 	   			self.ui.showTracks(self.tracks);
 	   		});
 	   		
 	   		this.audio.setOnEnded(function(){
-	   			self.currentTrack = self.getNextTrack(self.currentTrack)
-	   			
+	   			self.currentTrack = self.getNextTrack(self.currentTrack);
 	   			self.audio.setAndPlay(self.currentTrack.contentURI);
 	   			self.ui.updateTrackPage(self.currentTrack);
 	   		})
 	   		
 	   		this.ui.onClickTrack = function (index) {
 	   			var track = self.tracks[index];
-	   			self.currentTrack = self.tracks[index];
-	   			self.goToPage(self.currentPage, self.trackPageId);
+	   			self.currentTrack = track;
 	   			self.ui.updateTrackPage(track);
+	   			self.goToPage(self.currentPage, self.trackPageId);
 	   			self.audio.setAndPlay(track.contentURI);
 	   		};
-	   		
 	   		function onSearchTracks(trackArray){
 				if (trackArray.length > 0) {
 					for(var i = 0; i < trackArray.length; i++) {
@@ -125,15 +123,14 @@ var App = null;
 		    });
 		},
 		getNextTrack: function getNextTrack(currentTrack) {
-			var tracks = this.tracks;
-	    	for (var i = 0; i < tracks.length; i++){
-	    		if(tracks[i].contentURI == currentTrack.contentURI) {
-	    			if (i < tracks.length - 1) {
-	    				return tracks[i + 1];
+	    	for (var i = 0; i < this.tracks.length; i++){
+	    		if(this.tracks[i].contentURI === currentTrack.contentURI) {
+	    			if (i < this.tracks.length - 1) {
+	    				return this.tracks[i + 1];
 	    			}
 	    		}
-	    		return tracks[0];
 	    	}
+	    	return this.tracks[0];
 	    },
 		
 		goToPage: function goToPage(from, to) {
@@ -160,12 +157,6 @@ var App = null;
 	    			onSwipe(e.detail.direction);
 	    		});
 	    	});
-	    }, 
-	    
-	    onClickTrack: function onClickTrack(index){
-	    	console.log("Index = " + index + "Track uri = " + tracks[index].contentURI);
-	    	this.ui.updateTrackPage(tracks[index]);
-	    	goToPage(mainPageId, trackPageId);
 	    }
 	    
 	};

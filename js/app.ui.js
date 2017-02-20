@@ -7,6 +7,17 @@
 			
 		onClickTrack: function onClickTrack(index){},
 		
+
+		setOnBtnSortByTitleClick: function(onClick){
+			$("#btn_sort_by_title").on("click", onClick);
+		},
+		setOnBtnSortByArtistClick: function(onClick){
+			$("#btn_sort_by_artist").on("click", onClick);
+		},
+		setOnBtnSortByAlbumClick: function(onClick){
+			$("#btn_sort_by_album").on("click", onClick);
+		},
+		
 		showTracks: function (trackArray){
 	    	if (trackArray.length > 0) {
 	    		console.log("showTracks: Cleaning list...");
