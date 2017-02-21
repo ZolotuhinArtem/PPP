@@ -4,7 +4,7 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
 <Reference URI=".git%2FCOMMIT_EDITMSG">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>fmKztRB0WMIMyv+omagYQmsV+inv1fPJlvnitGI2WS8=</DigestValue>
+<DigestValue>jp9H0mCX2xb+Uup2jNGXr0glDG+Zj52caD+dUxMNxBM=</DigestValue>
 </Reference>
 <Reference URI=".git%2FHEAD">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -56,7 +56,7 @@
 </Reference>
 <Reference URI=".git%2Findex">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>zbJ/QWHBUOKzyT2HIeiTfadBOjUgStxsnnIMH0G5Pa8=</DigestValue>
+<DigestValue>DjxR5fHcbMnzpw5I3ZqmOPL5saTMEkHNE3KGmYGYRqw=</DigestValue>
 </Reference>
 <Reference URI=".git%2Finfo%2Fexclude">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -64,11 +64,11 @@
 </Reference>
 <Reference URI=".git%2Flogs%2FHEAD">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>MI88APd1GFea0FwCCr6Uj+jlgKjGk6Or9cHz6IvydtY=</DigestValue>
+<DigestValue>YG4Po3KC9AfNbL/roOzZvqvwK7glGoq4Cv5fR1JCk0U=</DigestValue>
 </Reference>
 <Reference URI=".git%2Flogs%2Frefs%2Fheads%2Fmaster">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>MI88APd1GFea0FwCCr6Uj+jlgKjGk6Or9cHz6IvydtY=</DigestValue>
+<DigestValue>YG4Po3KC9AfNbL/roOzZvqvwK7glGoq4Cv5fR1JCk0U=</DigestValue>
 </Reference>
 <Reference URI=".git%2Flogs%2Frefs%2Fremotes%2Forigin%2Fmaster">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -342,6 +342,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>E6kt9PPRrZanxuaMkKYKvDQ94gk3FgEMQ42zd4HAeAU=</DigestValue>
 </Reference>
+<Reference URI=".git%2Fobjects%2F59%2F83b3f02f7aed34bb042dbeacf9a0ba3e7cda2d">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>YsD1RsWqAELCiqyTwhYS1Dkx350npk1U7gq874CbbzI=</DigestValue>
+</Reference>
 <Reference URI=".git%2Fobjects%2F5c%2F24de66116d76efa83bd9d34bac87276b5edf8a">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>WNWpr10sNsXPYX4wiKGBcBJsiGuCtmd6AYJnRhoA988=</DigestValue>
@@ -361,6 +365,10 @@
 <Reference URI=".git%2Fobjects%2F62%2Ffe79e82f54bc45c0fb6cf94ffc8bc69670e6b6">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>wyQFTNihaZteNbc2vylVmYKsL0BTl0MFQ8ybSMmSy0Y=</DigestValue>
+</Reference>
+<Reference URI=".git%2Fobjects%2F63%2F5e331ac67b2fa79d8f4f288a0fd8bd766f85b7">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>8HdTbEh3cpLeTwpyWptd07iuQcLKZt2NR2j51mdYxY0=</DigestValue>
 </Reference>
 <Reference URI=".git%2Fobjects%2F63%2F61228019f48814f5aa6f0a1238bbcded8ec130">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -402,6 +410,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>bzhgTCJIg4UdyVt7nykyiGbyniNd6TCy3hBtXF1KrDo=</DigestValue>
 </Reference>
+<Reference URI=".git%2Fobjects%2F77%2Ff11ae964c3a284964967cab809e2ec99c296c7">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>o7Sk1dDbAiqcj0rMxvZNtJG57yVAQXUV47nLalhHWCc=</DigestValue>
+</Reference>
 <Reference URI=".git%2Fobjects%2F78%2F2719ee945697c75876574f4b3f9e4d469dfe09">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>HOikoyx+tPOfkbuJWmsDHzJwB+jay2XAXmOxQpnHmNc=</DigestValue>
@@ -434,6 +446,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>cDr4iVXFOyy8/2LXB+mBahhHhDVLaUURYgKYe8e8Ip4=</DigestValue>
 </Reference>
+<Reference URI=".git%2Fobjects%2F80%2F6b98fb1fc084952c914fb1ee5aa71e4cce1ab4">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>gUrErUZ4iuMk3M3xaDxPNtxwC8X7WrBMErBVxdBT0ps=</DigestValue>
+</Reference>
 <Reference URI=".git%2Fobjects%2F81%2F15f39482ed9696cdd7a8f012ed63c7fab14757">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>H8e8dA0Xpu+gKYH42a40BgsAX/6ryQi9uQEPkkNIRdU=</DigestValue>
@@ -462,6 +478,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>HT0SXIg6dsD0Bba22ZAUxzqXioG6J9gbj6wezqaDyZ0=</DigestValue>
 </Reference>
+<Reference URI=".git%2Fobjects%2F90%2F2cbd3fc8f30e5e77c0a2b91c60061ac6799146">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>f9XQunpD3sN7Gw2h/FNLlTkrUKjKFTHyG4EQjwfn2Yg=</DigestValue>
+</Reference>
 <Reference URI=".git%2Fobjects%2F91%2F6757540de75ac2cced17b5ce4adc431931d986">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>Ad52PY0tw3MyjRBW0A696GrN9asRalOLsv72QBahH4o=</DigestValue>
@@ -477,6 +497,10 @@
 <Reference URI=".git%2Fobjects%2F94%2F75f4739bf743d6fdf548eb983e10ca43f906f5">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>8/UhQZbeaLkZ1nUkiwtsfF6xNP7TWsyAZwQZ7nkzgj8=</DigestValue>
+</Reference>
+<Reference URI=".git%2Fobjects%2F96%2F4c73b1180c8c4cece85513909253d14dacb1a0">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>RDiW2vrjEAv1Bjl32b5+JGBdL9RM3oXOAh/7hyrB7Qc=</DigestValue>
 </Reference>
 <Reference URI=".git%2Fobjects%2F97%2F65b1bda7e5bddf0925555ab204b887a873bf24">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -710,6 +734,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>WY7gzNubG8ub9ythI2DiK4K6Q/yPLTWVZH64xYAQzbI=</DigestValue>
 </Reference>
+<Reference URI=".git%2Fobjects%2Fdc%2F79e0de3843d02119ffc3f1cd346d8f6f2d7c3e">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>2uPlzFW1ngJJRUrWualzNJe51lKquDkY8sAzaWztPyk=</DigestValue>
+</Reference>
 <Reference URI=".git%2Fobjects%2Fde%2F9927cc43fc5d53dd7d6795358ac1ca50b5e29b">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>IG8acjMlomv1EPM5G4uAFKJHIefLDiTGQfeNtCWDbXo=</DigestValue>
@@ -794,6 +822,10 @@
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>JLBb/GdBjhFgQFcjKbE5Dbw/rvYI6QWhvEdFrpJrv1A=</DigestValue>
 </Reference>
+<Reference URI=".git%2Fobjects%2Ff5%2Fe1420cbc4394ee02898e3ce25e7d3ff0f35986">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>6VMXsb1KPq7gL3jWkm/sDav0wFog25O+yH7upVeZZJA=</DigestValue>
+</Reference>
 <Reference URI=".git%2Fobjects%2Ff8%2Fa0c07e798192fcb1d2bed652bcbc9205f7a7bd">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
 <DigestValue>fkSWZqu6gfE4h605SKA84aguqpxOPyPfeq/Ks7XVClE=</DigestValue>
@@ -828,7 +860,7 @@
 </Reference>
 <Reference URI=".git%2Frefs%2Fheads%2Fmaster">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>3p6gk5Fk5p+WzhEYcF6jHC9dgRc8BMu/eOJLxBuJXdU=</DigestValue>
+<DigestValue>poSuCNtm0hqKqciX930fc65L6yMeOLH66nxETxvN4DY=</DigestValue>
 </Reference>
 <Reference URI=".git%2Frefs%2Fremotes%2Forigin%2Fmaster">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -840,7 +872,7 @@
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>BTOFJAJ4Ko6ZirSpNAgjnp0OSrB9L8C6va3UEb3c5gc=</DigestValue>
+<DigestValue>dTuX0lOpYDIdCifyJZrtN8AisDF26kog7MjmcDz96f0=</DigestValue>
 </Reference>
 <Reference URI="css%2Fstyle.css">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -852,15 +884,19 @@
 </Reference>
 <Reference URI="index.html">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>mqQucR5zpeuJsUkR83Sk1MYRtTTdfueGb4BCMyDkVag=</DigestValue>
+<DigestValue>xSNIordiC2ullFxp9XQWJ8BfOLU1CsnZAfBWxns8t0Y=</DigestValue>
 </Reference>
 <Reference URI="js%2Fapp.audio.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>zuoDxWVF5F8jI6ea0AgcBjvnULglWAVyuWuKunJEzEw=</DigestValue>
+<DigestValue>StUQ1lzl84bDhJ2Ze2uve+StoCNRsL90WaaGFojIXro=</DigestValue>
 </Reference>
 <Reference URI="js%2Fapp.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>G0vOmu620afhsLHpG+M1JcSoTMjrMaBmCUmbbjl8bYc=</DigestValue>
+<DigestValue>4AugFJUhcfKVhnFBXQvXEmAL0etwtom0xk3Ph6CQ+WM=</DigestValue>
+</Reference>
+<Reference URI="js%2Fapp.lyrics.js">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>RU7HE30JYg3LyMUN2p+r+L1FV3yNNRddbqmPecwT8BI=</DigestValue>
 </Reference>
 <Reference URI="js%2Fapp.model.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -872,7 +908,7 @@
 </Reference>
 <Reference URI="js%2Fapp.ui.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>0JSnF77/BOeRYbsQU/luOE19GnpPe22ktM5WyZx7cnc=</DigestValue>
+<DigestValue>h5+Q/1ctw1A2H3iRrgqkBLdczOnRTjUCOIoKhHRJzto=</DigestValue>
 </Reference>
 <Reference URI="js%2Fmain.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -1643,9 +1679,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-eh6Txlaa4QtRXGonXjulQTTsiGZwvyVLsbVkK/+kKy1e00lpDBcO/q0ADTgxljrqfzNPuVFtLhlB
-USRQhb22KxWuAsL2W6g1bHL9hYwC68su7RESIa6J1zhes2mnzPihJltK2cFyZxOTEEl3epw+YOg5
-r+4DVvf2Ben7EIHSuNA=
+UhnPOPznSw269MHgHGSVjJHsAgPMyI/UIUi6YvOvn6+Zy6nYpXkCqQiH1tXxea+pSTWGsWvvv5re
+o40epCXGJCsatj1JoVB6ICwuQVV1iLOdqgAIVoHeh5brv58fsVxBnviuWoHYKB83R2mmAQpQyK2A
+/5oH8tZpBkuiTPyoRUk=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

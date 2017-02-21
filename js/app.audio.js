@@ -27,6 +27,9 @@
 				console.error(this.logtag + ": setAndPlay: error: invalid trackURI");
 			}
 		},
+		stop: function stop(){
+			this.audioElement.get(0).stop();
+		},
 		tooglePause: function pause() {
 			 if (this.audioElement.get(0).paused) {
 				 this.audioElement.get(0).play();

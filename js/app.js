@@ -14,6 +14,7 @@
 		       'js/app.model.js',
 		       'js/app.ui.js',
 		       'js/app.trackUtils.js',
+		       'js/app.lyrics.js',
 		       'js/app.audio.js'
 		],
 	
@@ -24,6 +25,7 @@
 			this.ui = new App.Ui(); 
 			this.trackUtils = new App.TrackUtils();
 			this.audio = new App.Audio();
+			this.lyrics = new App.Lyrics();
 			
 			this.configureBackButton(this);
 	   		this.ui.setOnBtnSortByTitleClick(function(e) {
@@ -38,20 +40,58 @@
 	   			self.tracks = self.trackUtils.sortByAlbum(self.tracks);
 	   			self.ui.showTracks(self.tracks);
 	   		});
+	   		function nextTrack(){
+	   			playTrack(self.getNextTrack(self.currentTrack));
+	   		}
 	   		
-	   		this.audio.setOnEnded(function(){
-	   			self.currentTrack = self.getNextTrack(self.currentTrack);
+	   		function prevTrack(){
+	   			playTrack(self.getPrevTrack(self.currentTrack));
+	   		}
+	   		
+	   		function playOrPauseTrack(){
+	   			self.audio.tooglePause(); 
+	   		}
+	   		function playTrack(track) {
+	   			self.currentTrack = track;
 	   			self.audio.setAndPlay(self.currentTrack.contentURI);
 	   			self.ui.updateTrackPage(self.currentTrack);
-	   		})
+	   		}
+	   		
+	   		this.ui.setOnBtnAudioPlayClick(playOrPauseTrack);
+	   		
+	   		this.ui.setOnBtnAudioPrevClick(prevTrack);
+	   		
+	   		this.ui.setOnBtnAudioNextClick(nextTrack);
+	   		
+	   		this.audio.setOnEnded(nextTrack);
+	   		
+	   		this.audio.setOnPlay(function(){
+	   			self.ui.setAudioSliderMax(self.audio.getCurrentPlayingDuration());
+	   		});
+	   		this.audio.setOnTimeUpdate(function(){
+	   			self.ui.setAudioSliderMax(self.audio.getCurrentPlayingDuration());
+	   			self.ui.setAudioSliderValue(self.audio.getCurrentPlayingTime());
+	   		});
 	   		
 	   		this.ui.onClickTrack = function (index) {
 	   			var track = self.tracks[index];
-	   			self.currentTrack = track;
-	   			self.ui.updateTrackPage(track);
 	   			self.ui.changePage(self.ui.trackPageId);
-	   			self.audio.setAndPlay(track.contentURI);
+	   			playTrack(track);
 	   		};
+	   		
+	   		this.ui.setOnBtnLyricsSearchClick(function(){
+	   			self.ui.setTextLyrics("Loading...");
+	   			function onSuccess(data){
+	   				if (data.result.status == "ОК") {
+	   					self.ui.setTextLyrics(data.result.response);
+	   				}
+	   			}
+	   			function onError(){
+	   				self.ui.setTextLyrics("Not Found :(");
+	   			}
+	   			self.lyrics.getTextMusic(self.currentTrack.artists[0], 
+	   					self.currentTrack.title, onSuccess, onError);
+	   		});
 	   		function onSearchTracks(trackArray){
 				if (trackArray.length > 0) {
 					for(var i = 0; i < trackArray.length; i++) {
@@ -106,6 +146,16 @@
 	    		}
 	    	}
 	    	return this.tracks[0];
+	    },
+		getPrevTrack: function getNextTrack(currentTrack) {
+	    	for (var i = 0; i < this.tracks.length; i++){
+	    		if(this.tracks[i].contentURI === currentTrack.contentURI) {
+	    			if (i > 0) {
+	    				return this.tracks[i - 1];
+	    			}
+	    		}
+	    	}
+	    	return this.tracks[this.tracks.length - 1];
 	    }
 	};
 	
