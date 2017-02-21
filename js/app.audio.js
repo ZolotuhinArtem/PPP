@@ -7,6 +7,7 @@
 	};
 	
 	App.Audio.prototype = {
+		logtag: "App.Audio",
 		setOnPlay: function setOnPlay(onPlay){
 			this.audioElement.on("playing", onPlay);
 		},
@@ -20,8 +21,12 @@
 			this.audioElement.on("ended", onEnded);
 		},
 		setAndPlay: function play(trackURI) {
-			this.audioElement.attr('src', trackURI);
-			this.audioElement.get(0).play();
+			if (trackURI) {
+				this.audioElement.attr('src', trackURI);
+				this.audioElement.get(0).play();
+			} else {
+				console.error(this.logtag + ": setAndPlay: error: invalid trackURI");
+			}
 		},
 		tooglePause: function pause() {
 			 if (this.audioElement.get(0).paused) {

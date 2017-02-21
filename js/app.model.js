@@ -5,6 +5,7 @@
 	};
 	
 	App.Model.prototype = {
+		logtag: "App.Model",
 		/*
 		 * @param {function} onSearchTracks
 		 */
@@ -16,11 +17,11 @@
 	        		try{
 	    	    		tizen.content.find(onSuccessSearchTracks, onErrorSearchTracks, folders[i].id, filter, sortMode);
 	        		} catch (exc) {
-	        			console.warn('tizen.content.find exception: ' + exc.message);
+	        			console.error(this.logtag + ": searchTracks: tizen.content.find exception: " + exc.message);
 	        		}
 	        	}
 	        }, function (){
-	        	console.log("searchTracks: error");
+	        	console.error(this.logtag + ": searchTracks: error");
 	        	});
 	    }
 	};
