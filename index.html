@@ -12,45 +12,65 @@
 </head>
 
 <body>
-	<div class="ui-tabs">
-		<div class="ui-tabbar">
-			<ul>
-				<li class="ui-li-anchor"><a href="#" class="ui-tab-active">All</a></li>
-				<li class="ui-li-anchor"><a href="#">Track</a></li>
-				<li class="ui-li-anchor"><a href="#">Lyrics</a></li>
+
+	<div id="mainPage" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <h1>P P P</h1>
+           	<div class="ui-btn-box-s">
+           		<span>Sort by:</span>
+           		<button class="ui-btn-inline" id="btn_sort_by_title">title</button>
+           		<button class="ui-btn-inline" id="btn_sort_by_artist">artist</button>
+           		<button class="ui-btn-inline" id="btn_sort_by_album">album</button>
+           	</div>
+        </div><!-- /header -->
+        <div data-role="content" id="content_main">
+            <ul class="ui-listview" data-role="listview" id="track_list">
+            	<li class="ui-li-static">Scanning tracks...</li>
+            </ul>
+        </div><!-- /content -->
+        <div data-role="footer" class="ui-footer">
+	    		<a href="#mainPage" class="ui-tab-active ui-btn">All</a>
+		    	<a href="#trackPage" class="ui-btn">Track</a>
+		    	<a href="#lyricsPage" class="ui-btn">Lyrics</a>
+    	</div><!-- /footer -->
+	    
+    </div><!-- /page -->
+    
+    <div id="trackPage" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <h1>P P P</h1>
+        </div><!-- /header -->
+		<div data-role="content" id="content_track">
+			<ul class="ui-listview" data-role="listview" id="track_attributes_list_view">
+				<li  class="ui-li-static"><img alt="track" src="/res/img/track_template.png" width="100%" /></li>
+				<li  class="ui-li-static" id="track_title">...</li>
+				<li  class="ui-li-static" id="track_album"></li>
+				<li  class="ui-li-static" id="track_artist"></li>
 			</ul>
-		</div>
-		<div class="ui-section-changer" id="sectionChanger">
-			<div>
-				<section class="ui-section-active" data-position="fixed">
-					
-		            	<div class="sort-box">
-	           			<span>Sort by:</span>
-	           			<button id="btn_sort_by_title">title</button>
-	           			<button id="btn_sort_by_artist">artist</button>
-	           			<button id="btn_sort_by_album">album</button>
-           				</div>
-           			<ul  data-role="listview" id="track_list">
-		            	<li class="ui-li-static">Scanning tracks...</li>
-		            </ul>
-		            
-				</section>
-				<section>
-					<ul class="ui-listview" data-role="listview" id="track_attributes_list_view">
-						<li  class="ui-li-static"><img alt="track" src="/res/img/track_template.png" width="100%" /></li>
-						<li  class="ui-li-static" id="track_title">...</li>
-						<li  class="ui-li-static" id="track_album"></li>
-						<li  class="ui-li-static" id="track_artist"></li>
-					</ul>
-					<audio src="" id="audio" controls  ></audio>
-				</section>
-				<section>
-					<input type="text" id="lyrics-search-text"/>
-					<button id="lyrics-search-btn">Search</button>
-					<textarea>Lyrics</textarea>
-				</section>
-			</div>
-		</div>
-	</div>
+			<audio src="" id="audio" controls  ></audio>
+        </div><!-- /content -->
+        <div data-role="footer" class="ui-footer">
+	    		<a href="#mainPage" class="ui-tab-active ui-btn">All</a>	
+		    	<a href="#trackPage" class="ui-btn">Track</a>
+		    	<a href="#lyricsPage" class="ui-btn">Lyrics</a>
+    	</div><!-- /footer -->
+    </div><!-- /page -->
+    
+     <div id="lyricsPage" data-role="page">
+        <div data-role="header" data-position="fixed">
+            <h1>P P P</h1>
+        </div><!-- /header -->
+		<div data-role="content" id="content_track">
+			<input type="text" id="lyrics-search-text">
+			<button id="lyrics-search-btn">Search</button>
+			<textarea id="lyrics-textarea">Lyrics</textarea>
+        </div><!-- /content -->
+        <div data-role="footer" class="ui-footer">
+	    		<a href="#mainPage" class="ui-tab-active ui-btn">All</a>	
+		    	<a href="#trackPage" class="ui-btn">Track</a>
+		    	<a href="#lyricsPage" class="ui-btn">Lyrics</a>
+    	</div><!-- /footer -->
+    </div><!-- /page -->
+	
 </body>
 </html>
