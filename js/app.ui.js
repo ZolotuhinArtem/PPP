@@ -1,6 +1,10 @@
 ;(function(){
 	App.Ui = function Ui(){
 		this.trackList = $("#track_list");
+
+		this.mainPageId = "mainPage";
+		this.trackPageId = "trackPage";
+		this.lyricsPageId = "lyricsPage";
 	}
 	
 	App.Ui.prototype = {
@@ -55,6 +59,10 @@
 	    }, 
 	    getFormatedTrackName: function (track){
 	    	return track.artists[0] + " - " + track.title + " - " + track.album;
+	    },
+		
+		changePage: function changePage(pageId) {
+	    	tau.changePage("#" + pageId, {transition: '', reverse: false});
 	    }
 	    
     };

@@ -1,6 +1,5 @@
-;"use strict"
-
-(function(){
+;(function(){
+	"use strict";
 	App.Audio = function Audio(){
 		this.audioElement = $("#audio");
 		this.currentTrack = null;
