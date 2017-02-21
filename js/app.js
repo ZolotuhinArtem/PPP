@@ -25,7 +25,7 @@
 			this.trackUtils = new App.TrackUtils();
 			this.audio = new App.Audio();
 			
-			this.configureBackButton();
+			this.configureBackButton(this);
 	   		this.ui.setOnBtnSortByTitleClick(function(e) {
 	   			self.tracks = self.trackUtils.sortByTitle(self.tracks);
 	   			self.ui.showTracks(self.tracks);
@@ -77,14 +77,14 @@
 			
 		},
 		
-		configureBackButton: function configureBackButton(){
+		configureBackButton: function configureBackButton(context){
 		    window.addEventListener( 'tizenhwkey', function( ev ) {
 		        if( ev.keyName === "back" ) {
 		            var activePopup = document.querySelector( '.ui-popup-active' ),
 		                page = document.getElementsByClassName( 'ui-page-active' )[0],
 		                pageid = page ? page.id : "";
 	
-		            if( pageid === this.ui.mainPageId && !activePopup ) {
+		            if( pageid === context.ui.mainPageId && !activePopup ) {
 		                try {
 		                	if (confirm("Exit?")) {
 		                		tizen.application.getCurrentApplication().exit();

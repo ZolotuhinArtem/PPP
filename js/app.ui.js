@@ -62,7 +62,7 @@
 	    },
 		
 		changePage: function changePage(pageId) {
-	    	tau.changePage("#" + pageId, {transition: '', reverse: false});
+	    	tau.changePage("#" + pageId);
 	    }
 	    
     };
