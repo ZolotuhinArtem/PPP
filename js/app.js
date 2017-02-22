@@ -48,16 +48,13 @@
 	   			playTrack(self.getPrevTrack(self.currentTrack));
 	   		}
 	   		
-	   		function playOrPauseTrack(){
-	   			self.audio.tooglePause(); 
-	   		}
+	   		
 	   		function playTrack(track) {
 	   			self.currentTrack = track;
 	   			self.audio.setAndPlay(self.currentTrack.contentURI);
 	   			self.ui.updateTrackPage(self.currentTrack);
 	   		}
 	   		
-	   		this.ui.setOnBtnAudioPlayClick(playOrPauseTrack);
 	   		
 	   		this.ui.setOnBtnAudioPrevClick(prevTrack);
 	   		
@@ -65,13 +62,6 @@
 	   		
 	   		this.audio.setOnEnded(nextTrack);
 	   		
-	   		this.audio.setOnPlay(function(){
-	   			self.ui.setAudioSliderMax(self.audio.getCurrentPlayingDuration());
-	   		});
-	   		this.audio.setOnTimeUpdate(function(){
-	   			self.ui.setAudioSliderMax(self.audio.getCurrentPlayingDuration());
-	   			self.ui.setAudioSliderValue(self.audio.getCurrentPlayingTime());
-	   		});
 	   		
 	   		this.ui.onClickTrack = function (index) {
 	   			var track = self.tracks[index];

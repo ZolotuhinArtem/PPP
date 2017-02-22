@@ -5,7 +5,6 @@
 		this.mainPageId = "mainPage";
 		this.trackPageId = "trackPage";
 		this.lyricsPageId = "lyricsPage";
-		this.audioSliderId = "audio-slider";
 	}
 	
 	App.Ui.prototype = {
@@ -16,19 +15,6 @@
 		},
 		setAudioRightText: function setAudioRightText(val) {
 			$("#" + this.audioSliderId).attr("data-text-right", val);
-		},
-		setAudioSliderMax: function setAudioSliderMax(val) {
-			$("#" + this.audioSliderId).attr("max", val);
-		},
-		setAudioSliderValue: function setAudioSliderValue(val) {
-			$("#" + this.audioSliderId).slider("enable");
-			$("#" + this.audioSliderId).attr("value", val);
-			$("#" + this.audioSliderId).slider("refresh");
-		},
-		
-
-		getAudioSliderValue: function getAudioSliderValue() {
-			return $("#" + this.audioSliderId).attr("value");
 		},
 		
 		onClickTrack: function onClickTrack(index){},
@@ -46,9 +32,6 @@
 		},
 		setOnBtnAudioPrevClick: function(onClick){
 			$("#btn-prev-track").on("click", onClick);
-		},
-		setOnBtnAudioPlayClick: function(onClick){
-			$("#btn-play-track").on("click", onClick);
 		},
 		setOnBtnAudioNextClick: function(onClick){
 			$("#btn-next-track").on("click", onClick);

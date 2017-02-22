@@ -3,5 +3,4 @@
 #modify
 res/wgt/author-signature.xml
 res/wgt/signature1.xml
-res/wgt/js/app.lyrics.js
-res/wgt/js/app.ui.js
+res/wgt/css/style.css

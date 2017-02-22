@@ -46,16 +46,16 @@
 				<li  class="ui-li-static" id="track_album"></li>
 				<li  class="ui-li-static" id="track_artist"></li>
 			</ul>
-			<div>
-				<input type="range" class="ui-slider" id="audio-slider" min="0" max="100" value="0">
-				<button id="btn-prev-track">prev.</button>
-				<button id="btn-play-track">Play/Pause</button>
-				<button id="btn-next-track">next</button>
-			</div>
 			
-			<audio src="" id="audio"></audio>
         </div><!-- /content -->
+        <div data-role="footer" class="ui-footer">
+			<button id="btn-prev-track">prev.</button>
+			<audio src="" id="audio" controls="controls"></audio>
+			<button id="btn-next-track">next</button>
+			
+	    </div>
     </div><!-- /page -->
+    
     
      <div id="lyricsPage" data-role="page">
         <div data-role="header" data-position="fixed">
