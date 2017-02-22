@@ -44,39 +44,7 @@
         	} else {
         		console.log(logtag + "missing arguments");
         		onError("missing aruments!");
-        	}
-            
-        },
-
-        getAlbumImage: function getAlbumImage(link, onSuccess, onError) {
-        	var logtag = "App.AlbumCover: getAlbumImage: ";
-        	console.log(logtag + "getted " + link);
-        	if (link) {
-        		$.ajax({
-                    url: link,
-
-                    type: "GET",
-                    dataType: "json",
-                    success: function(data) {
-                    	console.log(logtag + "data.images[0].url=" + data.images[0].url);
-                    	if (data.images[0].url){
-                    		onSuccess(data.images[0].url);
-                    	} else {
-                    		console.log(logtag + " success: url NOT FOUND!");
-                    		onError("Not found!");
-                    	}
-                    	
-                    },
-                    error: function(data) {
-                    	console.log(logtag + "error");
-                        onError("Not found!");
-                    }
-                });
-        	} else {
-        		console.log(logtag + "missing arguments");
-        		onError("missing argumets");
-        	}
-            
+        	}   
         }
     };
 
