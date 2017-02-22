@@ -1,16 +1,126 @@
 #btn-next-track {
-	float: right;
-	width: 64px;
+	display: inline-block;
+	width: 10%;
 	/*тут надо крч картинку какую-нибудь*/
 }
 #btn-prev-track {
-	float: left;
-	width: 64px;
+	display: inline-block;
+	width: 10%;
 }
 #audio {
+	display: inline-block;
+	width: 60%;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	bottom: 0;
+}
+
+body {
+    margin: 0px auto;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: table;
+}
+
+#header-mainPage{
+	background-color: #0288D1;
+	text-align: center;
+	display: table;
+}
+
+#header-trackPage, #header-lyricsPage{
+	background-color: #0288D1;
+}
+
+.ui-btn-box-s{
+	padding: 5px 0;
+	background-color: #03A9F4;
+}
+
+#track_title {
+	text-align: center;
 	width: 100%;
+}
+#track_artist {
+	text-align: center;
+	width: 100%;
+}
+#track_album {
+	text-align: center;
+	width: 100%;
+}
+/*#audio{
 	height: 100%;
-	left: 10%;
-	top: 0%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}*/
+
+span{
+	font-size: 90%;
+}
+
+#btn_sort_by_title{
+	width: 20%;
+	display: inline-block;
+	color: #212121;
+	border-radius: 7px;
+}
+#btn_sort_by_artist {
+	width: 20%;
+	display: inline-block;
+	background-color: #D1C4E9;
+	border-radius: 7px;
+	color: #212121;
+}
+#btn_sort_by_album {
+	width: 20%;
+	display: inline-block;
+	background-color: #D1C4E9;
+	border-radius: 7px;
+	color: #212121;
+}
+.ui-btn-inline{
+	font-size: 60%;
 	
+	font-weight: 600;
+	text-decoration: none;
+	user-select: none;
+	padding: .25em .5em;
+	outline: none;
+	background: rgb(255,212,3) linear-gradient(#FFFFFF, #B3E5FC);
+	box-shadow: inset 0 -2px 1px rgba(0,0,0,0), inset 0 1px 2px rgba(0,0,0,0), inset 0 0 0 60px rgba(255,255,0,0);
+	transition: box-shadow .2s, border-color .2s;
+}
+
+#btn-lyrics{
+	width: 20%;
+	background-color: #03A9F4;
+	border-radius: 0;
+}
+#lyrics-search-btn{
+	background-color: #03A9F4;
+	border-radius: 0;
+}
+.ui-footer{
+	height: 9%;
+	padding: 0;
+	
+	text-align: center;
+	background-color: #03A9F4;
+	display: table;
+}
+
+.ui-btn{
+	display: table-cell;
+	vertical-align: middle;
+}
+#content_main, #content_track{
+	background-color: #E0E0E0;
+}
+
+#btn-track{
+	background-color: #03A9F4;;
+	height: 100%;
 }

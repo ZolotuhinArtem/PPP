@@ -14,13 +14,13 @@
 <body>
 
 	<div id="mainPage" data-role="page">
-        <div data-role="header" data-position="fixed">
+        <div id = "header-mainPage" data-role="header" data-position="fixed">
             <h1>P P P</h1>
            	<div class="ui-btn-box-s">
            		<span>Sort by:</span>
-           		<button class="ui-btn-inline" id="btn_sort_by_title">title</button>
-           		<button class="ui-btn-inline" id="btn_sort_by_artist">artist</button>
-           		<button class="ui-btn-inline" id="btn_sort_by_album">album</button>
+           		<button class="ui-btn-inline" id="btn_sort_by_title">TITLE</button>
+           		<button class="ui-btn-inline" id="btn_sort_by_artist">ARTIST</button>
+           		<button class="ui-btn-inline" id="btn_sort_by_album">ALBUM</button>
            	</div>
         </div><!-- /header -->
         <div data-role="content" id="content_main">
@@ -28,20 +28,20 @@
             	<li class="ui-li-static">Scanning tracks...</li>
             </ul>
         </div><!-- /content -->
-        <div data-role="footer" class="ui-footer">
-		    	<a href="#trackPage" class="ui-btn">Track</a>
+        <div id="footer-main" data-role="footer" class="ui-footer">
+		    	<a  id="btn-track" href="#trackPage" class="ui-btn">Track</a>
     	</div><!-- /footer -->
 	    
     </div><!-- /page -->
     
     <div id="trackPage" data-role="page">
-        <div data-role="header" data-position="fixed">
+        <div id="header-trackPage" data-role="header" data-position="fixed">
             <h1>P P P</h1>
-            <a href="#lyricsPage" class="ui-btn">Lyrics</a>
+            <a id="btn-lyrics" href="#lyricsPage" class="ui-btn">Lyrics</a>
         </div><!-- /header -->
 		<div data-role="content" id="content_track">
 			<ul class="ui-listview" data-role="listview" id="track_attributes_list_view">
-				<li  class="ui-li-static"><img alt="track" src="/res/img/track_template.png" width="100%" /></li>
+				<li  class="ui-li-static"><img id="img-cover" alt="track" src="/res/img/track_template.png" width="100%" /></li>
 				<li  class="ui-li-static" id="track_title">...</li>
 				<li  class="ui-li-static" id="track_album"></li>
 				<li  class="ui-li-static" id="track_artist"></li>
@@ -49,16 +49,18 @@
 			
         </div><!-- /content -->
         <div data-role="footer" class="ui-footer">
+        <div>
 			<button id="btn-prev-track">prev.</button>
 			<audio src="" id="audio" controls="controls"></audio>
 			<button id="btn-next-track">next</button>
+			</div>
 			
 	    </div>
     </div><!-- /page -->
     
     
      <div id="lyricsPage" data-role="page">
-        <div data-role="header" data-position="fixed">
+        <div id="header-lyricsPage" data-role="header" data-position="fixed">
             <h1>P P P</h1>
         </div><!-- /header -->
 		<div data-role="content" id="content_track">

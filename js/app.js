@@ -5,8 +5,8 @@
 	
 	App = function App(){
 		this.tracks = [];
-		this.trackListId = "track_list";
 		this.currentTrack = null;
+		this.coverTemplate = "res/img/track_template.png";
 	};
 	App.prototype = {
 		logtag: "App",
@@ -15,17 +15,20 @@
 		       'js/app.ui.js',
 		       'js/app.trackUtils.js',
 		       'js/app.lyrics.js',
-		       'js/app.audio.js'
+		       'js/app.audio.js',
+		       'js/app.albumcover.js'
 		],
 	
 		init: function init(){
 
 	    	var self = this;
+	    	
 			this.model = new App.Model();
 			this.ui = new App.Ui(); 
 			this.trackUtils = new App.TrackUtils();
 			this.audio = new App.Audio();
 			this.lyrics = new App.Lyrics();
+			this.albumcover = new App.AlbumCover();
 			
 			this.configureBackButton(this);
 	   		this.ui.setOnBtnSortByTitleClick(function(e) {
@@ -53,6 +56,20 @@
 	   			self.currentTrack = track;
 	   			self.audio.setAndPlay(self.currentTrack.contentURI);
 	   			self.ui.updateTrackPage(self.currentTrack);
+	   			var tempTrack = self.currentTrack;
+	   			self.albumcover.getCover(self.currentTrack.artists[0], 
+	   					self.currentTrack.title, 
+	   					function(url) {
+	   						if (tempTrack == self.currentTrack) {
+	   							self.ui.setCover(url);
+	   						} else {
+	   							self.ui.setCover(self.coverTemplate);
+	   						}
+	   					}, function(){
+	   						if (tempTrack == self.currentTrack) {
+	   							self.ui.setCover(self.coverTemplate);
+	   						}
+	   					});
 	   		}
 	   		
 	   		
@@ -72,14 +89,12 @@
 	   		this.ui.setOnBtnLyricsSearchClick(function(){
 	   			self.ui.setTextLyrics("Loading...");
 	   			function onSuccess(data){
-	   				if (data.result.status == "ОК") {
-	   					self.ui.setTextLyrics(data.result.response);
-	   				}
+   					self.ui.setTextLyrics(data);
 	   			}
-	   			function onError(){
-	   				self.ui.setTextLyrics("Not Found :(");
+	   			function onError(data){
+	   				self.ui.setTextLyrics(data);
 	   			}
-	   			self.lyrics.getTextMusic(self.currentTrack.artists[0], 
+	   			self.lyrics.getLyrics(self.currentTrack.artists[0], 
 	   					self.currentTrack.title, onSuccess, onError);
 	   		});
 	   		function onSearchTracks(trackArray){

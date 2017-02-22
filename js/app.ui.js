@@ -1,7 +1,6 @@
 ;(function(){
 	App.Ui = function Ui(){
 		this.trackList = $("#track_list");
-
 		this.mainPageId = "mainPage";
 		this.trackPageId = "trackPage";
 		this.lyricsPageId = "lyricsPage";
@@ -9,13 +8,6 @@
 	
 	App.Ui.prototype = {
 		logtag: "App.Ui",
-		
-		setAudioLeftText: function setAudioLeftText(val) {
-			$("#" + this.audioSliderId).attr("data-text-left", val);
-		},
-		setAudioRightText: function setAudioRightText(val) {
-			$("#" + this.audioSliderId).attr("data-text-right", val);
-		},
 		
 		onClickTrack: function onClickTrack(index){},
 		
@@ -43,6 +35,10 @@
 			$("#lyrics-textarea").attr("value", text);
 		},
 		
+		setCover: function(url) {
+			$("#img-cover").attr("src", url);
+		},
+		
 		showTracks: function (trackArray){
 	    	if (trackArray.length > 0) {
 	    		console.log(this.logtag + ": showTracks: Cleaning list...");
@@ -68,6 +64,7 @@
 	    	console.log("update track called");
 //	    	$("#" + this.audioSliderId).slider("enable");
 //	    	$("#" + this.audioSliderId).slider("refresh");
+	    	$("#img-cover").attr("src", "res/img/track_template.png");
 	    	$("#track_attributes_list_view").listview("refresh");
 	    	$("#track_title").text(track.title);
 	    	$("#track_album").text(track.album);
