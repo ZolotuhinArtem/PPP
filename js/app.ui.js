@@ -1,6 +1,7 @@
 ;(function(){
 	App.Ui = function Ui(){
 		this.trackList = $("#track_list");
+		this.lyricsTextArea = $("#lyrics-textarea");
 		this.mainPageId = "mainPage";
 		this.trackPageId = "trackPage";
 		this.lyricsPageId = "lyricsPage";
@@ -31,10 +32,27 @@
 		setOnBtnLyricsSearchClick: function(onClick) {
 			$("#lyrics-search-btn").on("click", onClick);
 		},
+		setOnBtnLyrics: function(onClick) {
+			$("#btn-lyrics").on("click", onClick);
+		},
+		setOnBtnTrackPageClick: function(onClick) {
+			$("#btn-track").on("click", onClick);
+		},
 		setTextLyrics: function(text) {
 			$("#lyrics-textarea").attr("value", text);
 		},
-		
+		setArtistLyrics: function(artistName) {
+			$("#lyrics-artist").attr("value", artistName);
+		},
+		setTrackLyrics: function(trackName) {
+			$("#lyrics-track").attr("value", trackName);
+		},
+		getArtistLyrics: function() {
+			return $("#lyrics-artist").attr("value");
+		},
+		getTrackLyrics: function() {
+			return $("#lyrics-track").attr("value");
+		},
 		setCover: function(url) {
 			$("#img-cover").attr("src", url);
 		},
@@ -54,6 +72,7 @@
 	    			this.trackList.append(li);
 	    			console.log(this.logtag + ": showTracks: appended in listview " + this.getFormatedTrackName(trackArray[i])); 
 	    		}
+	    		console.log(this.trackList.attr("id"));
 	    		this.trackList.listview('refresh');
 	    	} else {
 	    		alert("Tracks not found on your device");
@@ -69,6 +88,9 @@
 	    	$("#track_title").text(track.title);
 	    	$("#track_album").text(track.album);
 	    	$("#track_artist").text(track.artists[0]);
+	    },
+	    updateMainPage: function () {
+	    	this.trackList.listview("refresh");
 	    },
 	    deleteChilds : function (elem) {
 	    	while (elem.firstChild) {

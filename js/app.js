@@ -30,6 +30,10 @@
 			this.lyrics = new App.Lyrics();
 			this.albumcover = new App.AlbumCover();
 			
+			this.ui.setOnBtnTrackPageClick(function(){
+				self.ui.changePage("trackPage");
+			})
+			
 			this.configureBackButton(this);
 	   		this.ui.setOnBtnSortByTitleClick(function(e) {
 	   			self.tracks = self.trackUtils.sortByTitle(self.tracks);
@@ -56,6 +60,11 @@
 	   			self.currentTrack = track;
 	   			self.audio.setAndPlay(self.currentTrack.contentURI);
 	   			self.ui.updateTrackPage(self.currentTrack);
+	   			if ((self.ui.getArtistLyrics() == "") && (self.ui.getTrackLyrics() == "")){
+	   				self.ui.setArtistLyrics(track.artists[0]);
+	   				self.ui.setTrackLyrics(track.title);
+	   			}
+	   			
 	   			var tempTrack = self.currentTrack;
 	   			self.albumcover.getCover(self.currentTrack.artists[0], 
 	   					self.currentTrack.title, 
@@ -72,7 +81,6 @@
 	   					});
 	   		}
 	   		
-	   		
 	   		this.ui.setOnBtnAudioPrevClick(prevTrack);
 	   		
 	   		this.ui.setOnBtnAudioNextClick(nextTrack);
@@ -86,6 +94,12 @@
 	   			playTrack(track);
 	   		};
 	   		
+	   		this.ui.setOnBtnLyrics(function (){
+	   			self.ui.changePage("lyricsPage");
+   				self.ui.setArtistLyrics(self.currentTrack.artists[0]);
+   				self.ui.setTrackLyrics(self.currentTrack.title);
+	   		});
+	   		
 	   		this.ui.setOnBtnLyricsSearchClick(function(){
 	   			self.ui.setTextLyrics("Loading...");
 	   			function onSuccess(data){
@@ -94,8 +108,8 @@
 	   			function onError(data){
 	   				self.ui.setTextLyrics(data);
 	   			}
-	   			self.lyrics.getLyrics(self.currentTrack.artists[0], 
-	   					self.currentTrack.title, onSuccess, onError);
+	   			self.lyrics.getLyrics(self.ui.getArtistLyrics(), 
+	   					self.ui.getTrackLyrics(), onSuccess, onError);
 	   		});
 	   		function onSearchTracks(trackArray){
 				if (trackArray.length > 0) {
@@ -137,6 +151,7 @@
 		                } catch (ignore) {
 		                }
 		            } else {
+		            	context.ui.updateMainPage();
 		                window.history.back();
 		            }
 		        }

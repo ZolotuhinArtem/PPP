@@ -18,9 +18,9 @@
             <h1>P P P</h1>
            	<div class="ui-btn-box-s">
            		<span>Sort by:</span>
-           		<button class="ui-btn-inline" id="btn_sort_by_title">TITLE</button>
-           		<button class="ui-btn-inline" id="btn_sort_by_artist">ARTIST</button>
-           		<button class="ui-btn-inline" id="btn_sort_by_album">ALBUM</button>
+           		<div class="ui-btn-inline" id="btn_sort_by_title">TITLE</div>
+           		<div class="ui-btn-inline" id="btn_sort_by_artist">ARTIST</div>
+           		<div class="ui-btn-inline" id="btn_sort_by_album">ALBUM</div>
            	</div>
         </div><!-- /header -->
         <div data-role="content" id="content_main">
@@ -29,7 +29,7 @@
             </ul>
         </div><!-- /content -->
         <div id="footer-main" data-role="footer" class="ui-footer">
-		    	<a  id="btn-track" href="#trackPage" class="ui-btn">Track</a>
+		    	<div  id="btn-track" class="ui-btn">Track</div>
     	</div><!-- /footer -->
 	    
     </div><!-- /page -->
@@ -37,7 +37,7 @@
     <div id="trackPage" data-role="page">
         <div id="header-trackPage" data-role="header" data-position="fixed">
             <h1>P P P</h1>
-            <a id="btn-lyrics" href="#lyricsPage" class="ui-btn">Lyrics</a>
+            <div id="btn-lyrics" class="ui-btn">Lyrics</div>
         </div><!-- /header -->
 		<div data-role="content" id="content_track">
 			<ul class="ui-listview" data-role="listview" id="track_attributes_list_view">
@@ -50,9 +50,9 @@
         </div><!-- /content -->
         <div data-role="footer" class="ui-footer">
         <div>
-			<button id="btn-prev-track">prev.</button>
+			<div id="btn-prev-track">prev.</div>
 			<audio src="" id="audio" controls="controls"></audio>
-			<button id="btn-next-track">next</button>
+			<div id="btn-next-track">next</div>
 			</div>
 			
 	    </div>
@@ -64,7 +64,9 @@
             <h1>P P P</h1>
         </div><!-- /header -->
 		<div data-role="content" id="content_track">
-			<button id="lyrics-search-btn">Search</button>
+			<input type="text" id="lyrics-artist" placeholder="Artist name"/>
+			<input type="text" id="lyrics-track" placeholder="Track name"/>
+			<div id="lyrics-search-btn">Search</div>
 			<textarea id="lyrics-textarea">Lyrics</textarea>
         </div><!-- /content -->
     </div><!-- /page -->

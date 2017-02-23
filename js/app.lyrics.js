@@ -21,6 +21,7 @@
 					type: "GET",  
 					dataType: "json",
 					success: function(data) { 
+						var prefix = "Lyric for " + artistName + " - " + trackName + ":\n";
 						var text = "" + data.lyric;
 						if (text) {
 							console.log(logtag + ": getLyrics: responce: success");
@@ -29,9 +30,9 @@
 							onError("Lyric for " + artistName + " - " + trackName + " not found!");
 						}
 					}, 
-					error: function(data) { 
-						console.log(logtag + ": getLyrics: responce: error");
-						onError(data);
+					error: function(jqXHR, textStatus, errorThrown) { 
+						console.log(logtag + ": getLyrics: responce: error: " + errorThrown);
+						onError("Not found! " + errorThrown);
 					} 
 				}); 
 			} else {
