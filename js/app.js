@@ -30,9 +30,14 @@
 			this.lyrics = new App.Lyrics();
 			this.albumcover = new App.AlbumCover();
 			
-			this.ui.setOnBtnTrackPageClick(function(){
+			this.ui.setOnBtnTrackMainPageClick(function(){
 				self.ui.changePage("trackPage");
-			})
+			});
+			
+			this.ui.setOnBtnTrackLyricPageClick(function(){
+				// К о с т ы л ь
+				window.history.back();
+			});
 			
 			this.configureBackButton(this);
 	   		this.ui.setOnBtnSortByTitleClick(function(e) {
@@ -59,7 +64,7 @@
 	   		function playTrack(track) {
 	   			self.currentTrack = track;
 	   			self.audio.setAndPlay(self.currentTrack.contentURI);
-	   			self.ui.updateTrackPage(self.currentTrack);
+	   			self.ui.updateTrack(self.currentTrack);
 	   			if ((self.ui.getArtistLyrics() == "") && (self.ui.getTrackLyrics() == "")){
 	   				self.ui.setArtistLyrics(track.artists[0]);
 	   				self.ui.setTrackLyrics(track.title);
@@ -117,9 +122,6 @@
 						console.log(self.logtag + ": init: onSearchTracks: Finded " + trackArray[i].title + trackArray[i].artists[0]);
 						self.tracks.push(trackArray[i]);
 					}
-					var list;
-					list = document.getElementById(self.trackListId);
-					
 					self.tracks = self.trackUtils.sortByTitle(self.tracks);
 					self.ui.showTracks(self.tracks);
 				} else {

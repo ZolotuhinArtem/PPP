@@ -15,7 +15,6 @@
 
 	<div id="mainPage" data-role="page">
         <div id = "header-mainPage" data-role="header" data-position="fixed">
-            <h1>P P P</h1>
            	<div class="ui-btn-box-s">
            		<span>Sort by:</span>
            		<div class="ui-btn-inline" id="btn_sort_by_title">TITLE</div>
@@ -29,30 +28,26 @@
             </ul>
         </div><!-- /content -->
         <div id="footer-main" data-role="footer" class="ui-footer">
-		    	<div  id="btn-track" class="ui-btn">Track</div>
+		    	<div  id="btn-track-main">Track</div>
     	</div><!-- /footer -->
 	    
     </div><!-- /page -->
     
     <div id="trackPage" data-role="page">
-        <div id="header-trackPage" data-role="header" data-position="fixed">
-            <h1>P P P</h1>
-            <div id="btn-lyrics" class="ui-btn">Lyrics</div>
-        </div><!-- /header -->
 		<div data-role="content" id="content_track">
-			<ul class="ui-listview" data-role="listview" id="track_attributes_list_view">
-				<li  class="ui-li-static"><img id="img-cover" alt="track" src="/res/img/track_template.png" width="100%" /></li>
-				<li  class="ui-li-static" id="track_title">...</li>
-				<li  class="ui-li-static" id="track_album"></li>
-				<li  class="ui-li-static" id="track_artist"></li>
-			</ul>
-			
+			<img id="img-cover" alt="track" src="/res/img/track_template.png" width="98%" />
+			<div id="track-info-box">
+				<div id="track_title">...</div>
+				<div id="track_album"></div>
+				<div id="track_artist"></div>
+			</div>
         </div><!-- /content -->
         <div data-role="footer" class="ui-footer">
         <div>
-			<div id="btn-prev-track">prev.</div>
+        	<div id="btn-lyrics">Lyrics</div>
+			<div id="btn-prev-track"></div>
 			<audio src="" id="audio" controls="controls"></audio>
-			<div id="btn-next-track">next</div>
+			<div id="btn-next-track"></div>
 			</div>
 			
 	    </div>
@@ -60,15 +55,18 @@
     
     
      <div id="lyricsPage" data-role="page">
-        <div id="header-lyricsPage" data-role="header" data-position="fixed">
-            <h1>P P P</h1>
-        </div><!-- /header -->
+     	<div data-role="header" id="header-lyricsPage">
+     		<h1>Lyric</h1>
+     	</div>
 		<div data-role="content" id="content_track">
 			<input type="text" id="lyrics-artist" placeholder="Artist name"/>
 			<input type="text" id="lyrics-track" placeholder="Track name"/>
 			<div id="lyrics-search-btn">Search</div>
-			<textarea id="lyrics-textarea">Lyrics</textarea>
+			<div id="lyrics-text" rows="50">Lyrics</div>
         </div><!-- /content -->
+         <div id="footer-main" data-role="footer" class="ui-footer">
+		    	<div  id="btn-track-lyric">Track</div>
+    	</div><!-- /footer -->
     </div><!-- /page -->
 	
 </body>

@@ -35,11 +35,14 @@
 		setOnBtnLyrics: function(onClick) {
 			$("#btn-lyrics").on("click", onClick);
 		},
-		setOnBtnTrackPageClick: function(onClick) {
-			$("#btn-track").on("click", onClick);
+		setOnBtnTrackMainPageClick: function(onClick) {
+			$("#btn-track-main").on("click", onClick);
+		},
+		setOnBtnTrackLyricPageClick: function(onClick) {
+			$("#btn-track-lyric").on("click", onClick);
 		},
 		setTextLyrics: function(text) {
-			$("#lyrics-textarea").attr("value", text);
+			$("#lyrics-text").text(text);
 		},
 		setArtistLyrics: function(artistName) {
 			$("#lyrics-artist").attr("value", artistName);
@@ -79,14 +82,13 @@
 	    	}
 	    	
 	    },
-	    updateTrackPage: function (track) {
+	    updateTrack: function (track) {
 	    	console.log("update track called");
-//	    	$("#" + this.audioSliderId).slider("enable");
-//	    	$("#" + this.audioSliderId).slider("refresh");
 	    	$("#img-cover").attr("src", "res/img/track_template.png");
-	    	$("#track_attributes_list_view").listview("refresh");
 	    	$("#track_title").text(track.title);
 	    	$("#track_album").text(track.album);
+	    	$("#btn-track-main").text("Track: " + track.artists[0] + " - " + track.title);
+	    	$("#btn-track-lyric").text("Track: " + track.artists[0] + " - " + track.title);
 	    	$("#track_artist").text(track.artists[0]);
 	    },
 	    updateMainPage: function () {
