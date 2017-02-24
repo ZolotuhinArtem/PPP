@@ -26,18 +26,9 @@
 			this.model = new App.Model();
 			this.ui = new App.Ui(); 
 			this.trackUtils = new App.TrackUtils();
-			this.audio = new App.Audio();
+			this.audio = new App.Audio(this.ui.getAudioElement());
 			this.lyrics = new App.Lyrics();
 			this.albumcover = new App.AlbumCover();
-			
-			this.ui.setOnBtnTrackMainPageClick(function(){
-				self.ui.changePage("trackPage");
-			});
-			
-			this.ui.setOnBtnTrackLyricPageClick(function(){
-				// К о с т ы л ь
-				window.history.back();
-			});
 			
 			this.configureBackButton(this);
 	   		this.ui.setOnBtnSortByTitleClick(function(e) {
@@ -65,10 +56,6 @@
 	   			self.currentTrack = track;
 	   			self.audio.setAndPlay(self.currentTrack.contentURI);
 	   			self.ui.updateTrack(self.currentTrack);
-	   			if ((self.ui.getArtistLyrics() == "") && (self.ui.getTrackLyrics() == "")){
-	   				self.ui.setArtistLyrics(track.artists[0]);
-	   				self.ui.setTrackLyrics(track.title);
-	   			}
 	   			
 	   			var tempTrack = self.currentTrack;
 	   			self.albumcover.getCover(self.currentTrack.artists[0], 
@@ -95,14 +82,15 @@
 	   		
 	   		this.ui.onClickTrack = function (index) {
 	   			var track = self.tracks[index];
-	   			self.ui.changePage(self.ui.trackPageId);
+	   			self.ui.changePage("track");
 	   			playTrack(track);
 	   		};
 	   		
-	   		this.ui.setOnBtnLyrics(function (){
-	   			self.ui.changePage("lyricsPage");
-   				self.ui.setArtistLyrics(self.currentTrack.artists[0]);
-   				self.ui.setTrackLyrics(self.currentTrack.title);
+	   		this.ui.setOnBtnLyricsFillClick(function(){
+	   			if (self.currentTrack) {
+	   				self.ui.setArtistLyrics(self.currentTrack.artists[0]);
+	   				self.ui.setTrackLyrics(self.currentTrack.title);
+	   			}
 	   		});
 	   		
 	   		this.ui.setOnBtnLyricsSearchClick(function(){
@@ -144,7 +132,7 @@
 		            var activePopup = document.querySelector( '.ui-popup-active' ),
 		                page = document.getElementsByClassName( 'ui-page-active' )[0],
 		                pageid = page ? page.id : "";
-	
+		            
 		            if( pageid === context.ui.mainPageId && !activePopup ) {
 		                try {
 		                	if (confirm("Exit?")) {
@@ -153,7 +141,6 @@
 		                } catch (ignore) {
 		                }
 		            } else {
-		            	context.ui.updateMainPage();
 		                window.history.back();
 		            }
 		        }

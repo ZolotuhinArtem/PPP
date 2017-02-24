@@ -12,62 +12,65 @@
 </head>
 
 <body>
-
-	<div id="mainPage" data-role="page">
-        <div id = "header-mainPage" data-role="header" data-position="fixed">
-           	<div class="ui-btn-box-s">
-           		<span>Sort by:</span>
-           		<div class="ui-btn-inline" id="btn_sort_by_title">TITLE</div>
-           		<div class="ui-btn-inline" id="btn_sort_by_artist">ARTIST</div>
-           		<div class="ui-btn-inline" id="btn_sort_by_album">ALBUM</div>
-           	</div>
-        </div><!-- /header -->
-        <div data-role="content" id="content_main">
-            <ul class="ui-listview" data-role="listview" id="track_list">
-            	<li class="ui-li-static">Scanning tracks...</li>
-            </ul>
-        </div><!-- /content -->
-        <div id="footer-main" data-role="footer" class="ui-footer">
-		    	<div  id="btn-track-main">Track</div>
-    	</div><!-- /footer -->
-	    
-    </div><!-- /page -->
-    
-    <div id="trackPage" data-role="page">
-		<div data-role="content" id="content_track">
-			<img id="img-cover" alt="track" src="/res/img/track_template.png" width="98%" />
-			<div id="track-info-box">
-				<div id="track_title">...</div>
-				<div id="track_album"></div>
-				<div id="track_artist"></div>
+	<div data-role="page" id="mainPage">
+		<div class="ui-tabs">
+			<div class="ui-section-changer" id="section-changer">
+				<div>
+					<section class="ui-section-active section-page" data-position="fixed">
+						<div id="header-mainPage" class="header" data-position="fixed">
+				           	<div class="ui-btn-box-s">
+				           		<span>Sort by:</span>
+				           		<div class="ui-btn-inline" id="btn_sort_by_title">TITLE</div>
+				           		<div class="ui-btn-inline" id="btn_sort_by_artist">ARTIST</div>
+				           		<div class="ui-btn-inline" id="btn_sort_by_album">ALBUM</div>
+				           	</div>
+				        </div>
+			           	<div id="content_main" class="content">
+				            <ul class="ui-listview" data-role="listview" data-position="fixed" id="track_list">
+				            	<li class="ui-li-static">Scanning tracks...</li>
+				            </ul>
+				        </div>
+					</section>
+					<section data-position="fixed" class="section-page">
+						<div class="content" id="content_track">
+							<img id="img-cover" alt="track" src="/res/img/track_template.png" width="98%" />
+							<div id="track-info-box">
+								<div id="track_title">...</div>
+								<div id="track_album"></div>
+								<div id="track_artist"></div>
+							</div>
+				        </div><!-- /content -->
+				        <div class="footer" id="track-footer">
+							<div id="btn-prev-track"></div>
+							<audio src="" id="audio" controls="controls"></audio>
+							<div id="btn-next-track"></div>
+					    </div>
+					</section>
+					<section data-position="fixed" class="section-page">
+						<div class="header" id="header-lyricsPage" data-position="fixed">
+				     		<h1>Lyric</h1>
+				     	</div>
+						<div class="content" id="content_lyric">
+							<input type="text" id="lyrics-artist" placeholder="Artist name"/>
+							<input type="text" id="lyrics-track" placeholder="Track name"/>
+							<div id="lyrics-fill">Fill fields from current track</div>
+							<div id="lyrics-search-btn">Search</div>
+							<div id="lyrics-text"></div>
+							</ul>
+				        </div><!-- /content -->
+					</section>
+				</div>
 			</div>
-        </div><!-- /content -->
-        <div data-role="footer" class="ui-footer">
-        <div>
-        	<div id="btn-lyrics">Lyrics</div>
-			<div id="btn-prev-track"></div>
-			<audio src="" id="audio" controls="controls"></audio>
-			<div id="btn-next-track"></div>
+			<div class="ui-tabbar">
+				<ul>
+					<li class="ui-li-anchor"><a href="#" class="ui-tab-active tab">All</a></li>
+					<li class="ui-li-anchor"><a href="#" class="tab">Track</a></li>
+					<li class="ui-li-anchor"><a href="#" class="tab">Lyric</a></li>
+				</ul>
 			</div>
-			
-	    </div>
-    </div><!-- /page -->
-    
-    
-     <div id="lyricsPage" data-role="page">
-     	<div data-role="header" id="header-lyricsPage">
-     		<h1>Lyric</h1>
-     	</div>
-		<div data-role="content" id="content_track">
-			<input type="text" id="lyrics-artist" placeholder="Artist name"/>
-			<input type="text" id="lyrics-track" placeholder="Track name"/>
-			<div id="lyrics-search-btn">Search</div>
-			<div id="lyrics-text" rows="50">Lyrics</div>
-        </div><!-- /content -->
-         <div id="footer-main" data-role="footer" class="ui-footer">
-		    	<div  id="btn-track-lyric">Track</div>
-    	</div><!-- /footer -->
-    </div><!-- /page -->
+		</div>
+	</div>
+	
 	
 </body>
 </html>

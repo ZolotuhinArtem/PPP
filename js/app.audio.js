@@ -1,48 +1,52 @@
 ;(function(){
 	"use strict";
-	App.Audio = function Audio(){
-		this.audioElement = $("#audio");
+	App.Audio = function Audio(audioElement){
+		this.audioElement = audioElement;
 		this.currentTrack = null;
 	};
 	
 	App.Audio.prototype = {
 		logtag: "App.Audio",
+		
+		setAudioElement: function(audioElement) {
+			this.audioElement = audioElement;
+		},
 		setOnPlay: function setOnPlay(onPlay){
-			this.audioElement.on("playing", onPlay);
+			this.audioElement.addEventListener("playing", onPlay, false);
 		},
 		setOnPause: function setOnPause(onPause){
-			this.audioElement.on("pause", onPause);
+			this.audioElement.addEventListener("pause", onPause, false);
 		},
 		setOnTimeUpdate: function setOnTimeUpdate(onTimeupdate){
-			this.audioElement.on("timeupdate", onTimeupdate);
+			this.audioElement.addEventListener("timeupdate", onTimeupdate, false);
 		},
 		setOnEnded: function setOnTimeUpdate(onEnded){
-			this.audioElement.on("ended", onEnded);
+			this.audioElement.addEventListener("ended", onEnded, false);
 		},
 		setAndPlay: function play(trackURI) {
 			if (trackURI) {
-				this.audioElement.attr('src', trackURI);
-				this.audioElement.get(0).play();
+				this.audioElement.setAttribute('src', trackURI);
+				this.audioElement.play();
 			} else {
 				console.error(this.logtag + ": setAndPlay: error: invalid trackURI");
 			}
 		},
 		stop: function stop(){
-			this.audioElement.get(0).stop();
+			this.audioElement.stop();
 		},
 		tooglePause: function pause() {
-			 if (this.audioElement.get(0).paused) {
-				 this.audioElement.get(0).play();
+			 if (this.audioElement.paused) {
+				 this.audioElement.play();
              }
              else {
-            	 this.audioElement.get(0).pause();
+            	 this.audioElement.pause();
              }
 		},
 		getCurrentPlayingDuration: function getCurrentPlayingDuration(){
-			return this.audioElement.get(0).duration;
+			return this.audioElement.duration;
 		},
 		getCurrentPlayingTime: function getCurrentPlayingTime(){
-			return this.audioElement.get(0).currentTime;
+			return this.audioElement.currentTime;
 		}
 	};
 }());
