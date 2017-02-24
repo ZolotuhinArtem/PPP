@@ -5,6 +5,7 @@
 		this.mainPageId = "mainPage";
 		this.trackPageId = "trackPage";
 		this.lyricsPageId = "lyricsPage";
+		$("#footer-main").hide();
 	}
 	
 	App.Ui.prototype = {
@@ -87,6 +88,7 @@
 	    	$("#img-cover").attr("src", "res/img/track_template.png");
 	    	$("#track_title").text(track.title);
 	    	$("#track_album").text(track.album);
+	    	$("#footer-main").show();
 	    	$("#btn-track-main").text("Track: " + track.artists[0] + " - " + track.title);
 	    	$("#btn-track-lyric").text("Track: " + track.artists[0] + " - " + track.title);
 	    	$("#track_artist").text(track.artists[0]);
