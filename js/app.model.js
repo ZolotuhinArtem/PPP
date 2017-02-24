@@ -7,7 +7,8 @@
 	App.Model.prototype = {
 		logtag: "App.Model",
 		/*
-		 * @param {function} onSearchTracks
+		 * @param {function} onSearchTracks(tracks)
+		 * 
 		 */
 		searchTracks: function (onSuccessSearchTracks, onErrorSearchTracks){
 	    	tizen.content.getDirectories(function (folders){
